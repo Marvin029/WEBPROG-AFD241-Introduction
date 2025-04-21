@@ -5,48 +5,67 @@
 <title>My Personal Profile</title>
 </head>
 <body>
- 
-    <h1>This is a Heading</h1>
-    <p>This is a paragraph.</p>
+  
+  <nav>
+    <a href="#mainHeading">Home</a>
+    <a href="#life">My Life</a>
+    <a href="#education">Education</a>
+    <a href="#course">Course</a>
+    <a href="#experience">Experience</a>
+    <a href="#goals">Goals</a>
+    <a href="#hobbyList">Hobbies</a>
+  </nav>
 
-<div class="container">
-    <header> about me </header>
+  <h1 id="mainHeading">This is a Heading</h1>
+  <p id="intro">This is a paragraph.</p>
+
+  <div class="container">
+    <header>About Me</header>
     <main>
       <section class="main-content">
-        <div>1 My life 
+        <div id="life">1 My Life 
           <br> To graduate and work
         </div>
-        <div>2 Education / Achievements 
-          <br>• BS in Computer Science with specialization in Software & System, Asia Pacific Collge, Philippines
-
+        <div id="education">2 Education / Achievements 
+          <br>• BS in Computer Science with specialization in Software & System, Asia Pacific College, Philippines
         </div>
-        <div>3 Course </div>
-        <div>4 IT Experience </div>
-        <div>5 Goals In Life / Dream
-          <br> To graduate and work
-        </section>
-        <aside class="sidebar">
-         Hobbies & Interests
-       <br> Biking
-       <br> running
-         </aside>
-     </main>
-     <footer>
-         Picture Gallery
-     </footer>
-   </div>
+        <div id="course">3 Course</div>
+        <div id="experience">4 IT Experience</div>
+        <div id="goals">5 Goals In Life / Dream
+          <br><span id="goalText">To graduate and work</span>
+        </div>
 
-   <h2>External JavaScript</h2>
+        <!-- Dynamic Goal Update -->
+        <input type="text" id="goalInput" placeholder="Enter your new goal">
+        <button onclick="updateGoal()">Update Goal</button>
 
-<p id="demo">A Paragraph.</p>
+        <!-- Date and Time Display -->
+        <p id="dateTime"></p>
+        <button onclick="showDateTime()">Show Date & Time</button>
+      </section>
 
-<button type="button" onclick="myFunction()">Click Me</button>
+      <aside class="sidebar">
+        <strong>Hobbies & Interests</strong>
+        <ul id="hobbyList">
+          <li>Biking</li>
+          <li>Running</li>
+        </ul>
+        <input type="text" id="newHobby" placeholder="Add a hobby">
+        <button onclick="addHobby()">Add Hobby</button>
+      </aside>
+    </main>
+    <footer>Picture Gallery</footer>
+  </div>
 
-<p>This example uses a full web URL to link to "myScript.js".</p>
-<p>(myFunction is stored in "myScript.js")</p>
+  <h2>JavaScript DOM Manipulation</h2>
+  <p id="demo">A Paragraph.</p>
+  <p id="p1">Hello World p1!</p>
+  <p id="p2">Hello World p2!</p>
 
-<script src="./js/myscript.js"></script>
-   
+  <button onclick="myFunction()">Click Me</button>
+  <button onclick="changeHeading()">Change Heading</button>
+  <button onclick="toggleIntro()">Toggle Intro Paragraph</button>
 
+  <script src="js/myscript.js"></script>
 </body>
 </html>
