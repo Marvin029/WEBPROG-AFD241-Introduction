@@ -1,37 +1,40 @@
 function myFunction() {
-    document.getElementById("demo").innerHTML = "Paragraph changed.";
-    const p2 = document.getElementById("p2");
-    p2.style.color = "blue";
-    p2.style.fontFamily = "Arial";
-    p2.style.fontSize = "larger";
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+  document.getElementById("p2").style.color = "blue";
+  document.getElementById("p2").style.fontFamily = "Arial";
+  document.getElementById("p2").style.fontSize = "larger";
+}
+
+function changeHeading() {
+  document.getElementById("mainHeading").innerHTML = "Welcome to My Profile!";
+}
+
+function toggleIntro() {
+  const intro = document.getElementById("intro");
+  intro.style.display = (intro.style.display === "none") ? "block" : "none";
+}
+
+function updateGoal() {
+  const newGoal = document.getElementById("goalInput").value;
+  if (newGoal) {
+    document.getElementById("goalText").innerText = newGoal;
+    document.getElementById("goalInput").value = '';
   }
-  
-  function changeHeading() {
-    document.getElementById("mainHeading").innerHTML = "Welcome to My Portfolio!";
+}
+
+function showDateTime() {
+  const now = new Date();
+  document.getElementById("dateTime").innerText = now.toString();
+}
+
+function addHobby() {
+  const hobbyInput = document.getElementById("newHobby");
+  const hobby = hobbyInput.value;
+  if (hobby) {
+    const list = document.getElementById("hobbyList");
+    const li = document.createElement("li");
+    li.textContent = hobby;
+    list.appendChild(li);
+    hobbyInput.value = '';
   }
-  
-  function toggleIntro() {
-    const intro = document.getElementById("intro");
-    intro.style.display = intro.style.display === "none" ? "block" : "none";
-  }
-  
-  function updateGoal() {
-    const input = document.getElementById("goalInput").value;
-    document.getElementById("goalText").textContent = input || "To graduate and work";
-  }
-  
-  function showDateTime() {
-    const now = new Date();
-    document.getElementById("dateTime").innerHTML = now.toLocaleString();
-  }
-  
-  function addHobby() {
-    const newHobby = document.getElementById("newHobby").value;
-    if (newHobby.trim()) {
-      const li = document.createElement("li");
-      li.textContent = newHobby;
-      document.getElementById("hobbyList").appendChild(li);
-      document.getElementById("newHobby").value = "";
-    }
-  }
-  
+}
