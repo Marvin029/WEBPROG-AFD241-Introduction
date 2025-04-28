@@ -3,78 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Personal Profile</title>
+  <title>My Personal Portfolio</title>
   <link rel="stylesheet" href="css/css-flexbox-grid.css">
+  <!-- AOS for animations -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <nav class="navbar">
-    <a href="#home">Home</a>
-    <a href="#about">About Me</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
-    <a href="#goals">Goals</a>
-    <a href="#hobbies">Hobbies</a>
+  <nav>
+    <div class="logo">MyProfile</div>
+    <div class="nav-links">
+      <a href="#mainHeading">Home</a>
+      <a href="#life">My Life</a>
+      <a href="#education">Education</a>
+      <a href="#course">Course</a>
+      <a href="#experience">Experience</a>
+      <a href="#goals">Goals</a>
+      <a href="#hobbyList">Hobbies</a>
+    </div>
   </nav>
 
-  <header id="home" class="hero-section">
-    <h1 id="mainHeading">|</h1>
-    <h2 id="intro">Welcome to my personal website.</h2>
-    <button class="scroll-btn" onclick="scrollToSection('about')">Explore More ↓</button>
+  <header class="page-header" data-aos="fade-down">
+    <h1 id="mainHeading">Welcome to My Portfolio!</h1>
+    <h2 id="intro">I'm passionate about technology and achieving my dreams.</h2>
   </header>
 
   <main class="container">
-    <section id="about" class="section hidden">
+    <section class="main-content" data-aos="fade-right">
       <h2>About Me</h2>
-      <p>Passionate Computer Science student aiming to graduate and work in the IT industry.</p>
+
+      <div class="card" id="life">
+        <h3>My Life</h3>
+        <p>To graduate and work in the tech industry.</p>
+      </div>
+
+      <div class="card" id="education">
+        <h3>Education</h3>
+        <ul>
+          <li>BS Computer Science, Software & System Specialization — Asia Pacific College</li>
+        </ul>
+      </div>
+
+      <div class="card" id="course">
+        <h3>Course</h3>
+        <p>Currently exploring software development, web technologies, and cloud computing.</p>
+      </div>
+
+      <div class="card" id="experience">
+        <h3>IT Experience</h3>
+        <p>Internship & project experience in building web applications using modern tools.</p>
+      </div>
+
+      <div class="card" id="goals">
+        <h3>Life Goals</h3>
+        <p id="goalText">To graduate and work.</p>
+
+        <input type="text" id="goalInput" placeholder="Update your goal">
+        <button onclick="updateGoal()">Update Goal</button>
+      </div>
+
+      <div class="card" id="dateTimeSection">
+        <h3>Current Date & Time</h3>
+        <div id="dateTime"></div>
+        <button onclick="showDateTime()">Show Date & Time</button>
+      </div>
     </section>
 
-    <section id="education" class="section hidden">
-      <h2>Education / Achievements</h2>
-      <ul>
-        <li>BS in Computer Science, Asia Pacific College, Philippines</li>
-      </ul>
-    </section>
-
-    <section id="experience" class="section hidden">
-      <h2>Experience</h2>
-      <p>Currently learning and building projects in web development and software systems.</p>
-    </section>
-
-    <section id="goals" class="section hidden">
-      <h2>Goals</h2>
-      <p id="goalText">To graduate and work.</p>
-      <input type="text" id="goalInput" placeholder="Update your goal">
-      <button onclick="updateGoal()">Update Goal</button>
-      <div id="dateTime"></div>
-      <button onclick="showDateTime()">Show Date & Time</button>
-    </section>
-
-    <section id="hobbies" class="section hidden">
+    <aside class="sidebar" data-aos="fade-left">
       <h2>Hobbies & Interests</h2>
       <ul id="hobbyList">
-        <li>Biking</li>
-        <li>Running</li>
+        <li>Biking <span class="delete-btn" onclick="removeHobby(this)">❌</span></li>
+        <li>Running <span class="delete-btn" onclick="removeHobby(this)">❌</span></li>
       </ul>
       <input type="text" id="newHobby" placeholder="Add a new hobby">
       <button onclick="addHobby()">Add Hobby</button>
-    </section>
+    </aside>
   </main>
 
+  <section class="extra-section" data-aos="zoom-in">
+    <h2>Fun Section</h2>
+    <div id="demo">This is a demo text.</div>
+    <div id="p1">Paragraph p1</div>
+    <div id="p2">Paragraph p2</div>
+
+    <button onclick="myFunction()">Change Paragraph</button>
+    <button onclick="toggleIntro()">Toggle Intro</button>
+  </section>
+
   <footer>
-    <p>© 2025 My Personal Profile</p>
+    <p>© 2025 My Personal Profile. Built with ❤️</p>
   </footer>
 
-  <!-- Modal Popup -->
-  <div id="hobbyModal" class="modal hidden">
-    <div class="modal-content">
-      <span class="close-button" onclick="closeModal()">&times;</span>
-      <h2>New Hobby Added!</h2>
-      <p id="modalHobbyName"></p>
-    </div>
-  </div>
+  <button id="scrollTopBtn" onclick="scrollTopFunction()">⬆</button>
 
+  <!-- JS Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="js/myscript.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>

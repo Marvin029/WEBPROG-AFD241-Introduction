@@ -1,29 +1,18 @@
-// Typing Effect
-let text = "Welcome to My Portfolio!";
-let index = 0;
-function typeWriter() {
-  if (index < text.length) {
-    document.getElementById("mainHeading").innerHTML += text.charAt(index);
-    index++;
-    setTimeout(typeWriter, 100);
-  }
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Text has been changed!";
+  const p2 = document.getElementById("p2");
+  p2.style.color = "blue";
+  p2.style.fontFamily = "Arial";
+  p2.style.fontSize = "larger";
 }
-typeWriter();
 
-// Scroll reveal sections
-const sections = document.querySelectorAll('.section');
-window.addEventListener('scroll', () => {
-  sections.forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
-    if(sectionTop < window.innerHeight - 100) {
-      section.classList.add('visible');
-    }
-  });
-});
+function toggleIntro() {
+  const intro = document.getElementById("intro");
+  intro.style.display = (intro.style.display === "none") ? "block" : "none";
+}
 
-// Button functions
 function updateGoal() {
-  const input = document.getElementById("goalInput").value.trim();
+  const input = document.getElementById("goalInput").value;
   document.getElementById("goalText").textContent = input || "To graduate and work";
 }
 
@@ -36,23 +25,27 @@ function addHobby() {
   const newHobby = document.getElementById("newHobby").value.trim();
   if (newHobby) {
     const li = document.createElement("li");
-    li.textContent = newHobby;
+    li.innerHTML = `${newHobby} <span class="delete-btn" onclick="removeHobby(this)">❌</span>`;
     document.getElementById("hobbyList").appendChild(li);
-    document.getElementById("modalHobbyName").textContent = `You added: ${newHobby}`;
-    openModal();
     document.getElementById("newHobby").value = "";
   }
 }
 
-function scrollToSection(id) {
-  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+function removeHobby(element) {
+  element.parentElement.remove();
 }
 
-// Modal popup functions
-function openModal() {
-  document.getElementById("hobbyModal").classList.remove("hidden");
-}
+// Scroll to top functionality
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+window.onscroll = function() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+};
 
-function closeModal() {
-  document.getElementById("hobbyModal").classList.add("hidden");
+function scrollTopFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }
