@@ -1,21 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="css/css-flexbox-grid.css">
-<p>
-<title>My Personal Profile</title>
-<style>
-  p {
-    background-image: url('images/image1.jpg');
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-  }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Personal Profile</title>
+  <link rel="stylesheet" href="css/css-flexbox-grid.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
- 
   <nav>
     <a href="#mainHeading">Home</a>
     <a href="#life">My Life</a>
@@ -26,56 +20,78 @@
     <a href="#hobbyList">Hobbies</a>
   </nav>
 
-  <h1 id="mainHeading">This is a Heading</h1>
- <h2 id="intro">This is a paragraph.</h2>
+  <header class="page-header">
+    <h1 id="mainHeading">This is a Heading</h1>
+    <h2 id="intro">This is a paragraph.</h2>
+  </header>
 
-  <div class="container">
-    <header>About Me</header>
-    <main>
-      <section class="main-content">
-        <div id="life">1 My Life 
-          <br> To graduate and work
-        </div>
-        <div id="education">2 Education / Achievements 
-          <br>• BS in Computer Science with specialization in Software & System, Asia Pacific College, Philippines
-        </div>
-        <div id="course">3 Course</div>
-        <div id="experience">4 IT Experience</div>
-        <div id="goals">5 Goals In Life / Dream
-          <br><span id="goalText">To graduate and work</span>
-        </div>
+  <main class="container">
+    <section class="main-content">
+      <h2>About Me</h2>
 
-        <!-- Dynamic Goal Update -->
+      <div id="life">
+        <h3>1. My Life</h3>
+        <p>To graduate and work.</p>
+      </div>
+
+      <div id="education">
+        <h3>2. Education / Achievements</h3>
+        <ul>
+          <li>BS in Computer Science, Specialization in Software & System, Asia Pacific College, Philippines</li>
+        </ul>
+      </div>
+
+      <div id="course">
+        <h3>3. Course</h3>
+        <p>[Add your course details here]</p>
+      </div>
+
+      <div id="experience">
+        <h3>4. IT Experience</h3>
+        <p>[Describe your IT experience here]</p>
+      </div>
+
+      <div id="goals">
+        <h3>5. Goals In Life / Dream</h3>
+        <p id="goalText">To graduate and work.</p>
+
         <input type="text" id="goalInput" placeholder="Enter your new goal">
         <button onclick="updateGoal()">Update Goal</button>
+      </div>
 
-        <!-- Date and Time Display -->
+      <div id="dateTimeSection">
+        <h3>Current Date & Time</h3>
         <div id="dateTime"></div>
         <button onclick="showDateTime()">Show Date & Time</button>
-      </section>
+      </div>
+    </section>
 
-      <aside class="sidebar">
-        <strong>Hobbies & Interests</strong>
-        <ul id="hobbyList">
-          <li>Biking</li>
-          <li>Running</li>
-        </ul>
-        <input type="text" id="newHobby" placeholder="Add a hobby">
-        <button onclick="addHobby()">Add Hobby</button>
-      </aside>
-    </main>
-    <footer>Picture Gallery</footer>
-  </div>
+    <aside class="sidebar">
+      <h2>Hobbies & Interests</h2>
+      <ul id="hobbyList">
+        <li>Biking</li>
+        <li>Running</li>
+      </ul>
+      <input type="text" id="newHobby" placeholder="Add a hobby">
+      <button onclick="addHobby()">Add Hobby</button>
+    </aside>
+  </main>
 
- <div id="demo">A Paragraph.</div>
- <div id="p1">Hello World p1!</div>
- <div id="p2">Hello World p2!</div> 
+  <section class="extra-section">
+    <h2>More Features</h2>
+    <div id="demo">A paragraph.</div>
+    <div id="p1">Hello World p1!</div>
+    <div id="p2">Hello World p2!</div>
 
-  <button onclick="myFunction()">Click Me</button>
-  <button onclick="changeHeading()">Change Heading</button>
-  <button onclick="toggleIntro()">Toggle Intro Paragraph</button>
+    <button onclick="myFunction()">Click Me</button>
+    <button onclick="changeHeading()">Change Heading</button>
+    <button onclick="toggleIntro()">Toggle Intro Paragraph</button>
+  </section>
+
+  <footer>
+    <p>Picture Gallery Coming Soon!</p>
+  </footer>
 
   <script src="js/myscript.js"></script>
-</p>
 </body>
 </html>
