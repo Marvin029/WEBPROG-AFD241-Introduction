@@ -1,52 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<p>
-<link rel="stylesheet" href="css/css-flexbox-grid.css">
-<title>My Personal Profile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Personal Profile</title>
+  <link rel="stylesheet" href="css/css-flexbox-grid.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
- 
-    <h1>This is a Heading</h1>
-    This is a paragraph
 
-<div class="container">
-    <header> about me </header>
-    <main>
-      <section class="main-content">
-        <div>1 My life 
-          <br> To graduate and work
-        </div>
-        <div>2 Education / Achievements 
-          <br>• BS in Computer Science with specialization in Software & System, Asia Pacific Collge, Philippines
+  <nav>
+    <a href="#mainHeading">Home</a>
+    <a href="#life">My Life</a>
+    <a href="#education">Education</a>
+    <a href="#course">Course</a>
+    <a href="#experience">Experience</a>
+    <a href="#goals">Goals</a>
+    <a href="#hobbyList">Hobbies</a>
+  </nav>
 
-        </div>
-        <div>3 Course </div>
-        <div>4 IT Experience </div>
-        <div>5 Goals In Life / Dream
-          <br> To graduate and work
-        </section>
-        <aside class="sidebar">
-         Hobbies & Interests
-       <br> Biking
-       <br> running
-         </aside>
-     </main>
-     <footer>
-         Picture Gallery
-     </footer>
-   </div>
+  <header class="page-header">
+    <h1 id="mainHeading">This is a Heading</h1>
+    <h2 id="intro">This is a paragraph.</h2>
+  </header>
 
-   <h2>External JavaScript</h2>
+  <main class="container">
+    <section class="main-content">
+      <h2>About Me</h2>
 
-<br> id="demo">A Paragraph.
-<button type="button" onclick="myFunction()">Click Me</button>
+      <div id="life">
+        <h3>1. My Life</h3>
+        <p>To graduate and work.</p>
+      </div>
 
-<br>example uses a full web URL to link to "myScript.js".
-<br (myFunction is stored in "myScript.js")
-</p>
-<script src="./js/myscript.js"></script>
-   
+      <div id="education">
+        <h3>2. Education / Achievements</h3>
+        <ul>
+          <li>BS in Computer Science, Specialization in Software & System, Asia Pacific College, Philippines</li>
+        </ul>
+      </div>
 
+      <div id="course">
+        <h3>3. Course</h3>
+        <p>[Add your course details here]</p>
+      </div>
+
+      <div id="experience">
+        <h3>4. IT Experience</h3>
+        <p>[Describe your IT experience here]</p>
+      </div>
+
+      <div id="goals">
+        <h3>5. Goals In Life / Dream</h3>
+        <p id="goalText">To graduate and work.</p>
+
+        <input type="text" id="goalInput" placeholder="Enter your new goal">
+        <button onclick="updateGoal()">Update Goal</button>
+      </div>
+
+      <div id="dateTimeSection">
+        <h3>Current Date & Time</h3>
+        <div id="dateTime"></div>
+        <button onclick="showDateTime()">Show Date & Time</button>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <h2>Hobbies & Interests</h2>
+      <ul id="hobbyList">
+        <li>Biking</li>
+        <li>Running</li>
+      </ul>
+      <input type="text" id="newHobby" placeholder="Add a hobby">
+      <button onclick="addHobby()">Add Hobby</button>
+    </aside>
+  </main>
+
+  <section class="extra-section">
+    <h2>More Features</h2>
+    <div id="demo">A paragraph.</div>
+    <div id="p1">Hello World p1!</div>
+    <div id="p2">Hello World p2!</div>
+
+    <button onclick="myFunction()">Click Me</button>
+    <button onclick="changeHeading()">Change Heading</button>
+    <button onclick="toggleIntro()">Toggle Intro Paragraph</button>
+  </section>
+
+  <footer>
+    <p>Picture Gallery Coming Soon!</p>
+  </footer>
+
+  <script src="js/myscript.js"></script>
 </body>
 </html>
