@@ -5,92 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>My Personal Profile</title>
   <link rel="stylesheet" href="css/css-flexbox-grid.css">
-  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <nav>
-    <a href="#mainHeading">Home</a>
-    <a href="#life">My Life</a>
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
     <a href="#education">Education</a>
-    <a href="#course">Course</a>
     <a href="#experience">Experience</a>
     <a href="#goals">Goals</a>
-    <a href="#hobbyList">Hobbies</a>
+    <a href="#hobbies">Hobbies</a>
   </nav>
 
-  <header class="page-header">
-    <h1 id="mainHeading">This is a Heading</h1>
-    <h2 id="intro">This is a paragraph.</h2>
+  <header id="home" class="hero-section">
+    <h1 id="mainHeading">|</h1>
+    <h2 id="intro">Welcome to my personal website.</h2>
+    <button class="scroll-btn" onclick="scrollToSection('about')">Explore More ↓</button>
   </header>
 
   <main class="container">
-    <section class="main-content">
+    <section id="about" class="section hidden">
       <h2>About Me</h2>
-
-      <div id="life">
-        <h3>1. My Life</h3>
-        <p>To graduate and work.</p>
-      </div>
-
-      <div id="education">
-        <h3>2. Education / Achievements</h3>
-        <ul>
-          <li>BS in Computer Science, Specialization in Software & System, Asia Pacific College, Philippines</li>
-        </ul>
-      </div>
-
-      <div id="course">
-        <h3>3. Course</h3>
-        <p>[Add your course details here]</p>
-      </div>
-
-      <div id="experience">
-        <h3>4. IT Experience</h3>
-        <p>[Describe your IT experience here]</p>
-      </div>
-
-      <div id="goals">
-        <h3>5. Goals In Life / Dream</h3>
-        <p id="goalText">To graduate and work.</p>
-
-        <input type="text" id="goalInput" placeholder="Enter your new goal">
-        <button onclick="updateGoal()">Update Goal</button>
-      </div>
-
-      <div id="dateTimeSection">
-        <h3>Current Date & Time</h3>
-        <div id="dateTime"></div>
-        <button onclick="showDateTime()">Show Date & Time</button>
-      </div>
+      <p>Passionate Computer Science student aiming to graduate and work in the IT industry.</p>
     </section>
 
-    <aside class="sidebar">
+    <section id="education" class="section hidden">
+      <h2>Education / Achievements</h2>
+      <ul>
+        <li>BS in Computer Science, Asia Pacific College, Philippines</li>
+      </ul>
+    </section>
+
+    <section id="experience" class="section hidden">
+      <h2>Experience</h2>
+      <p>Currently learning and building projects in web development and software systems.</p>
+    </section>
+
+    <section id="goals" class="section hidden">
+      <h2>Goals</h2>
+      <p id="goalText">To graduate and work.</p>
+      <input type="text" id="goalInput" placeholder="Update your goal">
+      <button onclick="updateGoal()">Update Goal</button>
+      <div id="dateTime"></div>
+      <button onclick="showDateTime()">Show Date & Time</button>
+    </section>
+
+    <section id="hobbies" class="section hidden">
       <h2>Hobbies & Interests</h2>
       <ul id="hobbyList">
         <li>Biking</li>
         <li>Running</li>
       </ul>
-      <input type="text" id="newHobby" placeholder="Add a hobby">
+      <input type="text" id="newHobby" placeholder="Add a new hobby">
       <button onclick="addHobby()">Add Hobby</button>
-    </aside>
+    </section>
   </main>
 
-  <section class="extra-section">
-    <h2>More Features</h2>
-    <div id="demo">A paragraph.</div>
-    <div id="p1">Hello World p1!</div>
-    <div id="p2">Hello World p2!</div>
-
-    <button onclick="myFunction()">Click Me</button>
-    <button onclick="changeHeading()">Change Heading</button>
-    <button onclick="toggleIntro()">Toggle Intro Paragraph</button>
-  </section>
-
   <footer>
-    <p>Picture Gallery Coming Soon!</p>
+    <p>© 2025 My Personal Profile</p>
   </footer>
+
+  <!-- Modal Popup -->
+  <div id="hobbyModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <h2>New Hobby Added!</h2>
+      <p id="modalHobbyName"></p>
+    </div>
+  </div>
 
   <script src="js/myscript.js"></script>
 </body>

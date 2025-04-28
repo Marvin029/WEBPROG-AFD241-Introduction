@@ -1,24 +1,29 @@
-function myFunction() {
-  const demo = document.getElementById("demo");
-  const p2 = document.getElementById("p2");
-
-  demo.innerHTML = "Paragraph changed.";
-  p2.style.color = "blue";
-  p2.style.fontFamily = "Arial";
-  p2.style.fontSize = "larger";
+// Typing Effect
+let text = "Welcome to My Portfolio!";
+let index = 0;
+function typeWriter() {
+  if (index < text.length) {
+    document.getElementById("mainHeading").innerHTML += text.charAt(index);
+    index++;
+    setTimeout(typeWriter, 100);
+  }
 }
+typeWriter();
 
-function changeHeading() {
-  document.getElementById("mainHeading").innerHTML = "Welcome to My Portfolio!";
-}
+// Scroll reveal sections
+const sections = document.querySelectorAll('.section');
+window.addEventListener('scroll', () => {
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    if(sectionTop < window.innerHeight - 100) {
+      section.classList.add('visible');
+    }
+  });
+});
 
-function toggleIntro() {
-  const intro = document.getElementById("intro");
-  intro.style.display = (intro.style.display === "none") ? "block" : "none";
-}
-
+// Button functions
 function updateGoal() {
-  const input = document.getElementById("goalInput").value;
+  const input = document.getElementById("goalInput").value.trim();
   document.getElementById("goalText").textContent = input || "To graduate and work";
 }
 
@@ -33,6 +38,21 @@ function addHobby() {
     const li = document.createElement("li");
     li.textContent = newHobby;
     document.getElementById("hobbyList").appendChild(li);
+    document.getElementById("modalHobbyName").textContent = `You added: ${newHobby}`;
+    openModal();
     document.getElementById("newHobby").value = "";
   }
+}
+
+function scrollToSection(id) {
+  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+}
+
+// Modal popup functions
+function openModal() {
+  document.getElementById("hobbyModal").classList.remove("hidden");
+}
+
+function closeModal() {
+  document.getElementById("hobbyModal").classList.add("hidden");
 }
