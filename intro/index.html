@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>My Personal Profile</title>
-  <link rel="stylesheet" href="css/css-flexbox-grid.css">
-  <link rel="stylesheet" href="css/style.css">
-</head>
 
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css-flexbox-grid.css">
+</head>
 <body>
 
   <nav>
@@ -21,8 +22,8 @@
   </nav>
 
   <header class="page-header">
-    <h1 id="mainHeading">This is a Heading</h1>
-    <h2 id="intro">This is a paragraph.</h2>
+    <h1 id="mainHeading">Welcome to my Personal Profile Page!</h1>
+    <h2 id="intro">Hi, I'm [Your Name], a Computer Science student passionate about technology and innovation.</h2>
   </header>
 
   <main class="container">
@@ -31,31 +32,30 @@
 
       <div id="life">
         <h3>1. My Life</h3>
-        <p>To graduate and work.</p>
+        <p>To graduate and work in the tech industry.</p>
       </div>
 
       <div id="education">
         <h3>2. Education / Achievements</h3>
         <ul>
-          <li>BS in Computer Science, Specialization in Software & System, Asia Pacific College, Philippines</li>
+          <li>BS in Computer Science, Asia Pacific College</li>
         </ul>
       </div>
 
       <div id="course">
         <h3>3. Course</h3>
-        <p>[Add your course details here]</p>
+        <p>Exploring software development, web technologies, and cloud computing.</p>
       </div>
 
       <div id="experience">
         <h3>4. IT Experience</h3>
-        <p>[Describe your IT experience here]</p>
+        <p>Internship & projects in web applications using modern tools.</p>
       </div>
 
       <div id="goals">
         <h3>5. Goals In Life / Dream</h3>
         <p id="goalText">To graduate and work.</p>
-
-        <input type="text" id="goalInput" placeholder="Enter your new goal">
+        <input type="text" id="goalInput" placeholder="Enter your new goal" />
         <button onclick="updateGoal()">Update Goal</button>
       </div>
 
@@ -72,26 +72,27 @@
         <li>Biking</li>
         <li>Running</li>
       </ul>
-      <input type="text" id="newHobby" placeholder="Add a hobby">
+      <input type="text" id="newHobby" placeholder="Add a hobby" />
       <button onclick="addHobby()">Add Hobby</button>
     </aside>
   </main>
 
   <section class="extra-section">
     <h2>More Features</h2>
-    <div id="demo">A paragraph.</div>
-    <div id="p1">Hello World p1!</div>
-    <div id="p2">Hello World p2!</div>
-
-    <button onclick="myFunction()">Click Me</button>
-    <button onclick="changeHeading()">Change Heading</button>
-    <button onclick="toggleIntro()">Toggle Intro Paragraph</button>
+    <div class="glass-card">
+      <div id="demo">A paragraph.</div>
+      <div id="p1">Hello World p1!</div>
+      <div id="p2">Hello World p2!</div>
+      <button onclick="myFunction()">Click Me</button>
+      <button onclick="changeHeading()">Change Heading</button>
+      <button onclick="toggleIntro()">Toggle Intro Paragraph</button>
+    </div>
   </section>
 
   <footer>
     <p>Picture Gallery Coming Soon!</p>
   </footer>
 
-  <script src="js/myscript.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
