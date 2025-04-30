@@ -1,9 +1,15 @@
 function myFunction() {
-  document.getElementById("demo").innerHTML = "Text has been changed!";
+  const demo = document.getElementById("demo");
   const p2 = document.getElementById("p2");
-  p2.style.color = "blue";
-  p2.style.fontFamily = "Arial";
+
+  demo.innerHTML = "Paragraph changed.";
+  p2.style.color = "cyan";
+  p2.style.fontFamily = "Poppins";
   p2.style.fontSize = "larger";
+}
+
+function changeHeading() {
+  document.getElementById("mainHeading").innerHTML = "Welcome to My Portfolio!";
 }
 
 function toggleIntro() {
@@ -13,7 +19,7 @@ function toggleIntro() {
 
 function updateGoal() {
   const input = document.getElementById("goalInput").value;
-  document.getElementById("goalText").textContent = input || "To graduate and work";
+  document.getElementById("goalText").textContent = input || "To graduate and work.";
 }
 
 function showDateTime() {
@@ -25,27 +31,8 @@ function addHobby() {
   const newHobby = document.getElementById("newHobby").value.trim();
   if (newHobby) {
     const li = document.createElement("li");
-    li.innerHTML = `${newHobby} <span class="delete-btn" onclick="removeHobby(this)">❌</span>`;
+    li.textContent = newHobby;
     document.getElementById("hobbyList").appendChild(li);
     document.getElementById("newHobby").value = "";
   }
-}
-
-function removeHobby(element) {
-  element.parentElement.remove();
-}
-
-// Scroll to top functionality
-const scrollTopBtn = document.getElementById("scrollTopBtn");
-window.onscroll = function() {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    scrollTopBtn.style.display = "block";
-  } else {
-    scrollTopBtn.style.display = "none";
-  }
-};
-
-function scrollTopFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
 }
