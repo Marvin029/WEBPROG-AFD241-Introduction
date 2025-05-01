@@ -66,46 +66,57 @@ interactiveElements.forEach(element => {
   });
 });
 
-// Toggle dark mode
-const darkModeToggle = document.querySelector('#darkModeToggle');
-darkModeToggle.addEventListener('change', () => {
-  document.body.classList.toggle('dark-mode');
+// Dark mode toggle
+document.getElementById("darkModeToggle").addEventListener("change", function () {
+  document.body.classList.toggle("dark-mode", this.checked);
+  
+  // Show/hide custom cursor based on dark mode state
+  if (this.checked) {
+    cursorLight.style.display = 'block';
+  } else {
+    cursorLight.style.display = 'none';
+  }
 });
 
-// Update goal text
-function updateGoal() {
-  const goalInput = document.getElementById('goalInput');
-  const goalText = document.getElementById('goalText');
-  goalText.textContent = goalInput.value || "To graduate and work.";
+// Original page functionality
+function myFunction() {
+  const demo = document.getElementById("demo");
+  const p2 = document.getElementById("p2");
+
+  demo.innerHTML = "Paragraph changed.";
+  p2.style.color = "cyan";
+  p2.style.fontFamily = "Poppins";
+  p2.style.fontSize = "larger";
 }
 
-// Add new hobby
-function addHobby() {
-  const newHobby = document.getElementById('newHobby').value;
-  if (newHobby) {
-    const hobbyList = document.getElementById('hobbyList');
-    const listItem = document.createElement('li');
-    listItem.textContent = newHobby;
-    hobbyList.appendChild(listItem);
-    document.getElementById('newHobby').value = '';
+function changeHeading() {
+  document.getElementById("mainHeading").innerHTML = "Personalized Web Page";
+}
+
+function toggleIntro() {
+  const intro = document.getElementById("intro");
+  intro.style.display = intro.style.display === "none" ? "block" : "none";
+}
+
+function showDateTime() {
+  const dateTime = new Date();
+  document.getElementById("dateTime").innerHTML = dateTime;
+}
+
+function updateGoal() {
+  const goal = document.getElementById("goalInput").value;
+  if (goal) {
+    document.getElementById("goalText").innerHTML = goal;
   }
 }
 
-// Show current date and time
-function showDateTime() {
-  const dateTimeElement = document.getElementById('dateTime');
-  const currentDate = new Date();
-  dateTimeElement.textContent = currentDate.toString();
-}
-
-// Change heading
-function changeHeading() {
-  const heading = document.getElementById('mainHeading');
-  heading.textContent = "Profile Page Updated!";
-}
-
-// Toggle intro paragraph visibility
-function toggleIntro() {
-  const intro = document.getElementById('intro');
-  intro.style.display = intro.style.display === 'none' ? 'block' : 'none';
+function addHobby() {
+  const hobbyInput = document.getElementById("newHobby");
+  if (hobbyInput.value.trim()) {
+    const hobbyList = document.getElementById("hobbyList");
+    const newHobby = document.createElement("li");
+    newHobby.textContent = hobbyInput.value;
+    hobbyList.appendChild(newHobby);
+    hobbyInput.value = "";
+  }
 }
