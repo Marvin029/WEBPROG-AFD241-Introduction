@@ -7,7 +7,11 @@
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css-flexbox-grid.css">
+  <link rel="stylesheet" href="css/style.css?version=0.1">
+  <link rel="stylesheet" href="css/css-flexbox-grid.css?version=0.1">
+  <link rel="stylesheet" href="css/pink.css?version=0.1">
+  <link rel="stylesheet" href="css/image.css?version=0.1">
+  <link rel="stylesheet" href="css/shopping.css?version=0.1">
 </head>
 <body>
 
@@ -93,6 +97,73 @@
     <p>Picture Gallery Coming Soon!</p>
   </footer>
 
+  <!-- Vue App 1 -->
+  <div id="app" style="margin: 20px;">
+    <p>{{ message }}</p>
+    <p>{{ 'Random number: ' + Math.ceil(Math.random()*6) }}</p>
+    <div v-bind:class="vueClass">This element is bound to the "pinkBG" class.</div>
+  </div>
+
+  <!-- Vue App 2 - Image Gallery -->
+  <div id="app2" style="margin: 20px;">
+    <div>
+      <figure v-for="x in manyFoods" :key="x.name">
+        <img :src="x.url" :alt="x.name">
+        <figcaption>{{ x.name }}</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- Vue App 3 - Shopping List -->
+  <div id="app3" style="margin: 20px;">
+    <form @submit.prevent="addItem">
+      <p>
+        <label>What do you need?</label><br>
+        <input type="text" required placeholder="Item name..." v-model="itemName">
+      </p>
+      <p>
+        <label>How many?</label><br>
+        <input type="number" required placeholder="Number of items..." v-model="itemNumber">
+      </p>
+      <p>
+        <label>
+          <input type="checkbox" v-model="itemImportant">
+          Important?
+        </label>
+      </p>
+      <button type="submit">Add item</button>
+    </form>
+
+    <hr>
+
+    <div>
+      <h3>Shopping List</h3>
+      <ul id="ulToFind">
+        <li 
+          v-for="item in shoppingList" 
+          :class="{ impClass: item.important }"
+          @click="item.found = !item.found"
+          v-show="!item.found">
+          {{ item.name }}, {{ item.number }}
+        </li>
+      </ul>
+      <ul id="ulFound">
+        <li 
+          v-for="item in shoppingList" 
+          :class="{ impClass: item.important }"
+          @click="item.found = !item.found"
+          v-show="item.found">
+          {{ item.name }}, {{ item.number }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!-- Vue Apps -->
+  <script src="js/vue.js"></script>
+  <script src="js/images.js"></script>
+  <script src="js/shopping.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
