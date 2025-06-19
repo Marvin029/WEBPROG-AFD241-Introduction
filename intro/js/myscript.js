@@ -1,38 +1,105 @@
-function myFunction() {
-  const demo = document.getElementById("demo");
-  const p2 = document.getElementById("p2");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Personal Profile</title>
 
-  demo.innerHTML = "Paragraph changed.";
-  p2.style.color = "cyan";
-  p2.style.fontFamily = "Poppins";
-  p2.style.fontSize = "larger";
-}
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/css-flexbox-grid.css?version=0.1">
+  <link rel="stylesheet" href="css/flexbox.css">
+</head>
+<body>
+  <!-- Realistic flashlight cursor element -->
+  <div class="cursor-light"></div>
 
-function changeHeading() {
-  document.getElementById("mainHeading").innerHTML = "Welcome to My Portfolio!";
-}
+  <nav>
+    <a href="#mainHeading">Home</a>
+    <a href="#life">My Life</a>
+    <a href="#education">Education</a>
+    <a href="#course">Course</a>
+    <a href="#experience">Experience</a>
+    <a href="#goals">Goals</a>
+    <a href="#hobbyList">Hobbies</a>
+    <!-- Dark Mode Switch -->
+    <label for="darkModeToggle" class="dark-mode-label">🌙</label>
+    <input type="checkbox" id="darkModeToggle">
+  </nav>
 
-function toggleIntro() {
-  const intro = document.getElementById("intro");
-  intro.style.display = (intro.style.display === "none") ? "block" : "none";
-}
+  <header class="page-header">
+    <h1 id="mainHeading">Welcome to my Personal Profile Page!</h1>
+    <h2 id="intro">Hi, I'm John Marvin Sumalinog, a Computer Science student passionate about technology and innovation.</h2>
+  </header>
 
-function updateGoal() {
-  const input = document.getElementById("goalInput").value;
-  document.getElementById("goalText").textContent = input || "To graduate and work.";
-}
+  <main class="container">
+    <section class="main-content">
+      <h2>About Me</h2>
 
-function showDateTime() {
-  const now = new Date();
-  document.getElementById("dateTime").innerHTML = now.toLocaleString();
-}
+      <div id="life">
+        <h3>1. My Life</h3>
+        <p>To graduate and work in the tech industry.</p>
+      </div>
 
-function addHobby() {
-  const newHobby = document.getElementById("newHobby").value.trim();
-  if (newHobby) {
-    const li = document.createElement("li");
-    li.textContent = newHobby;
-    document.getElementById("hobbyList").appendChild(li);
-    document.getElementById("newHobby").value = "";
-  }
-}
+      <div id="education">
+        <h3>2. Education / Achievements</h3>
+        <ul>
+          <li>BS in Computer Science, Asia Pacific College</li>
+        </ul>
+      </div>
+
+      <div id="course">
+        <h3>3. Course</h3>
+        <p>Exploring software development, web technologies, and cloud computing.</p>
+      </div>
+
+      <div id="experience">
+        <h3>4. IT Experience</h3>
+        <p>Internship & projects in web applications using modern tools.</p>
+      </div>
+
+      <div id="goals">
+        <h3>5. Goals In Life / Dream</h3>
+        <p id="goalText">To graduate and work.</p>
+        <input type="text" id="goalInput" placeholder="Enter your new goal">
+        <button onclick="updateGoal()">Update Goal</button>
+      </div>
+
+      <div id="dateTimeSection">
+        <h3>Current Date & Time</h3>
+        <div id="dateTime"></div>
+        <button onclick="showDateTime()">Show Date & Time</button>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <h2>Hobbies & Interests</h2>
+      <ul id="hobbyList">
+        <li>Biking</li>
+        <li>Running</li>
+      </ul>
+      <input type="text" id="newHobby" placeholder="Add a hobby">
+      <button onclick="addHobby()">Add Hobby</button>
+    </aside>
+  </main>
+
+  <section class="extra-section">
+    <h2>More Features</h2>
+    <div class="glass-card">
+      <div id="demo">A paragraph.</div>
+      <div id="p1">Hello World p1!</div>
+      <div id="p2">Hello World p2!</div>
+      <button onclick="myFunction()">Click Me</button>
+      <button onclick="changeHeading()">Change Heading</button>
+      <button onclick="toggleIntro()">Toggle Intro Paragraph</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>Picture Gallery Coming Soon!</p>
+  </footer>
+
+  <!-- External JavaScript -->
+  <script src="js/myscript.js"></script>
+</body>
+</html>
